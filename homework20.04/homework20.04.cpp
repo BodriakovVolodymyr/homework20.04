@@ -19,6 +19,46 @@ int main()
 	 computers[i].showInfo();
  }
 
+ //Task1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ string name = "Asus";
+
+ auto find = find_if(computers.begin(), computers.end(), [name]( Computer a) { return a.getName() == name;});
+ if(find == computers.end())
+	 {
+	 cout << "Computer not found!" << endl;
+ }
+ else
+ {
+	 cout << "Computer found!" << endl;
+	 find->showInfo();
+ }
+ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+ //Task2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ auto it = min_element(computers.begin(), computers.end(), [](Computer& a, Computer& b) { return a.getRate() < b.getRate(); });
+ if (it != computers.end())
+ {
+	 cout << "Computer with the lowest rate: " << endl;
+	 it->showInfo();
+	 computers.erase(it);
+ }
+ else
+ {
+	 cout << "No computers found!" << endl;
+ }
+ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+ for (int i = 0; i < computers.size(); i++)
+ {
+	 computers[i].showInfo();
+ }
+
+ //Task3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
 
 }
 

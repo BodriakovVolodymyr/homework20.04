@@ -127,9 +127,11 @@ int Computer::getPrice() const
 
 void Computer::showInfo() const
 {
+	cout << "--------------------" << endl;
     cout << "Name: " << name << endl;
     cout << "Rate: " << rate << endl;
     cout << "RAM: " << ram << endl;
     cout << "DVD-ROM: " << (dvd_rom ? "Yes" : "No") << endl;
     cout << "Price: " << price << endl;
+    cout << "--------------------" << endl;
 }
