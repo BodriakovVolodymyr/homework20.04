@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="homework20.04/homework20.04.vcxproj" />
+  <Project Path="homework20.04/homework20.04.vcxproj" Id="5d04b61e-0de8-4980-9bff-c7600919ba91" />
 </Solution>

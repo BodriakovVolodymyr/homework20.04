@@ -18,7 +18,7 @@ int main()
  {
 	 computers[i].showInfo();
  }
-
+ cout << "~~~~~~~~~~~~~~~~Find and delete computer by name~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
  //Task1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  string name = "Asus";
 
@@ -32,7 +32,7 @@ int main()
 	 cout << "Computer found!" << endl;
 	 find->showInfo();
  }
- cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+ cout << "~~~~~~~~~~~~~~~~~Find computer with the lowest rate~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
  //Task2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  auto it = min_element(computers.begin(), computers.end(), [](Computer& a, Computer& b) { return a.getRate() < b.getRate(); });
  if (it != computers.end())
@@ -45,7 +45,7 @@ int main()
  {
 	 cout << "No computers found!" << endl;
  }
- cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+ cout << "~~~~~~~~~~~~~~~Updated list of computers~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
  for (int i = 0; i < computers.size(); i++)
  {
 	 computers[i].showInfo();
@@ -53,10 +53,42 @@ int main()
 
  //Task3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+ auto dvd = count_if(computers.begin(), computers.end(), [](Computer& a) { return a.getDvdRom(); });
+ if(dvd == 0)
+ {
+	 cout << "No computers with dvd-rom found!" << endl;
+ }
+ else
+ {
+	 cout << "Computer with dvd-rom: " << dvd << endl;
+ }
+ cout << "~~~~~~~~~~~~~Find computer with RAM greater than 16 and update price~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
+ 
+  //Task4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+ for_each(computers.begin(), computers.end(), [](Computer& a) { if (a.getRam() > 16) { a.setPrice(a.getPrice() * 1.8);}});
+ 
+ for (int i = 0; i < computers.size(); i++)
+ {
+	 computers[i].showInfo();
+ }
+ cout << "~~~~~~~~~~~~~Sort computers by price~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
-
+ //Task5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ sort(computers.begin(), computers.end(), [](Computer& a, Computer& b) { return a.getPrice() < b.getPrice();  });
+ cout << "Computers sorted by price from lower to highest: " << endl;
+ for (int i = 0; i < computers.size(); i++)
+ {
+	 computers[i].showInfo();
+ }
+ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+ sort(computers.begin(), computers.end(), [](Computer& a, Computer& b) { return a.getPrice() > b.getPrice();  });
+ cout << "Computers sorted by price from highest to lower: " << endl;
+ for (int i = 0; i < computers.size(); i++)
+ {
+	 computers[i].showInfo();
+ }
 
 
 

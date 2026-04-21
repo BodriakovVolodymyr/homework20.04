@@ -32,6 +32,7 @@ Computer::Computer(const Computer& obj)
 
 Computer& Computer::operator=(const Computer& obj)
 {
+	delete[] name;
     int name_length = strlen(obj.name) + 1;
     name = new char[name_length];
     strcpy(name, obj.name);
@@ -74,7 +75,7 @@ void Computer::setRam(int _ram)
 {
     if (_ram > 0)
     {
-        rate = _ram;
+        ram = _ram;
     }
     else
     {
@@ -92,7 +93,7 @@ void Computer::setPrice(int _price)
 {
     if (_price > 0)
     {
-        rate = _price;
+        price = _price;
     }
     else
     {
